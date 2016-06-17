@@ -11,8 +11,7 @@ include_once("class/connexion.php");
 $con = new connectToDB();
 
 $locality = $con->selectLocal($_POST["locality"]);
-
-$con->insert($_POST["Fname"],$_POST["Lname"],$_POST["age"],$_POST["Sexe"],$locality);
+$con->insert($_POST["Fname"],$_POST["Lname"],$_POST["age"],$_POST["Sexe"],$locality[0]["idTown"]);
 
 ?>
 
@@ -26,7 +25,7 @@ $con->insert($_POST["Fname"],$_POST["Lname"],$_POST["age"],$_POST["Sexe"],$local
 <!-- //for-mobile-apps -->
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <div class="content">

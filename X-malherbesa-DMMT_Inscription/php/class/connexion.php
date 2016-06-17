@@ -54,7 +54,6 @@ class connectToDB{
      */
     public function setAllLocal(){
         $rqst = "SELECT * FROM `t_town` ";
-
         return $this->executeSQLRequest($rqst);
     }
 
@@ -64,16 +63,14 @@ class connectToDB{
      */
     public function selectLocal($locality){
         $rqst = "SELECT * FROM `t_town` WHERE `toName` = '$locality'";
-        echo "$rqst";
         return $this->executeSQLRequest($rqst);
     }
     /**
      * Name : getAllTeacher
      * @return mixed
      */
-    public function insert($FName,$LName,$Year,$Sexe,$town){
-        $rqst = "INSERT INTO `db_run`.`t_runner` (`idRunner`, `ruFName`, `ruLName`, `ruYearOfBirth`, `ruSexe`, `fktown`) VALUES (NULL, '$FName', '$LName', '$Year', '$Sexe', '$town')";
-        echo "$rqst";
+    public function insert($FName,$LName,$Year,$Sex,$town){
+        $rqst = "INSERT INTO `db_run`.`t_runner` (`idRunner`, `ruFName`, `ruLName`, `ruYearOfBirth`, `ruSexe`, `fktown`) VALUES (NULL, '$FName', '$LName', '$Year', '$Sex', '$town');";
         return $this->executeSQLRequest($rqst);
     }
 }
